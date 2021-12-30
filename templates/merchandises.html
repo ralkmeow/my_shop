@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Канцелярия.рф
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="row justify-content-center">
+                {{ category.name }} в канцелярия.рф
+            </div>
+            <div class="row justify-content-center">
+                {% if not merchandises %}
+                Увы, данная категория ещё пуста
+                {% endif %}
+            </div>
+        </div>
+        <ul class="row">
+            {% for merchandise in merchandises %}
+            <li>
+                <a href="merchandise/{{ merchandise.id }}">{{ merchandise.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

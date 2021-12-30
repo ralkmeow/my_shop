@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Канцелярия.рф
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="row justify-content-center">
+                {{ merchandise.name }} в канцелярия.рф
+            </div>
+            <div class="row justify-content-center">
+                {{ merchandise.manufacturer }}
+            </div>
+            <div class="row justify-content-center">
+                {{ merchandise.price }}
+            </div>
+            <div class="row justify-content-center">
+                {% if not pictures %}
+                Изображений товара нет
+                {% endif %}
+            </div>
+        </div>
+        <ul class="row">
+            {% for pic in pictures %}
+            <li>
+                <img src="{{ pic.image.url }}" alt="{{ merchandise.name }}">
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
