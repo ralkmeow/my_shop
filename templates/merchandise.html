@@ -18,10 +18,10 @@
                 {{ merchandise.name }} в канцелярия.рф
             </div>
             <div class="row justify-content-center">
-                {{ merchandise.manufacturer }}
+                Производитель: {{ merchandise.manufacturer }}
             </div>
             <div class="row justify-content-center">
-                {{ merchandise.price }}
+                Цена: {{ merchandise.price }} Рублей
             </div>
             <div class="row justify-content-center">
                 {% if not pictures %}
@@ -31,7 +31,7 @@
         </div>
         <ul class="row">
             {% for pic in pictures %}
-            <li>
+            <li style="list-style-type: none">
                 <img src="{{ pic.image.url }}" alt="{{ merchandise.name }}">
             </li>
             {% endfor %}

@@ -27,13 +27,13 @@
                 {% endif %}
             </div>
         </div>
-        <ul class="row">
+        <ol class="row">
             {% for merchandise in merchandises %}
             <li>
                 <a href="merchandise/{{ merchandise.id }}">{{ merchandise.name }}</a>
             </li>
             {% endfor %}
-        </ul>
+        </ol>
     </div>
 </body>
 </html>
